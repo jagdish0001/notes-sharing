@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NoteCollab - Login</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #caf0f8; /* Lightest blue for the whole page background */
+            color: #023e8a; /* Dark blue for text for good contrast */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .split-screen {
+            display: flex;
+            width: 800px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .left, .right {
+            padding: 40px;
+            flex: 1;
+        }
+
+        .left {
+            background-color: #0077b6; /* Dark blue for the login section */
+            color: white; /* White text for better readability */
+        }
+
+        .right {
+            background-color: #90e0ef; /* Soft blue for the information section */
+            color: #023e8a; /* Dark blue for text to maintain readability */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        h2 {
+            margin-top: 0;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        input[type="text"], input[type="email"], input[type="password"] {
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #023e8a; /* Dark blue borders for contrast */
+            border-radius: 4px;
+            background-color: #ffffff; /* White background for inputs */
+            color: #0077b6; /* Text color matching the left section background */
+        }
+
+        .login-btn {
+            background-color: #00b4d8; /* Bright blue for the button */
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .login-btn:hover {
+            background-color: #023e8a; /* Darker blue for button hover */
+        }
+
+        .sign-up-link {
+            text-align: center;
+            display: block;
+            margin-top: 20px;
+            color: white; /* White for a consistent link appearance in the left section */
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .sign-up-link:hover {
+            color: #00b4d8; /* Bright blue color for hover, matching the login button */
+        }
+
+        .about-app {
+            color: #023e8a; /* Keeping text color consistent with the rest of the right section */
+        }
+
+    </style>
+</head>
+<body>
+    <div class="split-screen">
+        <div class="left">
+            <h2>Login</h2>
+            <form>
+                <input type="email" id="email" name="email" placeholder="Email">
+                <input type="password" id="password" name="password" placeholder="Password">
+                <button type="submit" class="login-btn">Login</button>
+                <a href="{% url 'signup' %}" class="sign-up-link">Sign Up if you don't have an account</a>
+            </form>
+        </div>
+        <div class="right">
+            <div class="about-app">
+                <h2>NoteCollab</h2>
+                <p>Reconnect with the Note Sharing App! Access your notes, collaborate seamlessly, and engage with your educational community. Your journey towards efficient learning continues here.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
